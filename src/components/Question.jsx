@@ -34,14 +34,13 @@ function Question({currentQuestion, choices, increment}) {
     <button onClick={handleNext}>Next</button>
   );
 
-
-  const correct = (
+  const markedCorrect = (
     <div>
       Correct
     </div>
   )
   
-  const incorrect = (
+  const markedIncorrect = (
     <div>
       Incorrect
     </div>
@@ -68,9 +67,8 @@ function Question({currentQuestion, choices, increment}) {
               </label>
               {submitted ? 
                 choice === currentQuestion.correct ? 
-                  correct : choice === selectedAnswer ? 
-                      incorrect : null :
-                null}
+                  markedCorrect : choice === selectedAnswer ? 
+                      markedIncorrect : null : null}
             </div>
           )
         })}

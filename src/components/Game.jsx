@@ -44,9 +44,6 @@ function Game({triviaData, setTriviaData}) {
           <div>
             {`Question ${counter + 1} of 10`}
           </div>
-          <div>
-            {`Current score is ${score}`}
-          </div>
           <Question 
             currentQuestion={currentQuestion}
             choices={randomChoices}
