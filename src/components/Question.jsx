@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Error from "./Error";
 
 function Question({currentQuestion, choices, increment}) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [errors, setErrors] = useState([]);
-  // console.log(selectedAnswer);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -41,13 +41,7 @@ function Question({currentQuestion, choices, increment}) {
         })}
         <button>Submit Answer</button>
       </form>
-      {errors.map( error => {
-        return (
-          <div>
-            {error}
-          </div>
-        )
-      })}
+      <Error errors={errors}/>
     </div>
     
   )

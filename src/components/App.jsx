@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Game from "./Game";
+import Error from "./Error";
 import data from "../Apprentice_TandemFor400_Data.json";
 
 function App() {
@@ -48,13 +49,7 @@ function App() {
           triviaData={triviaData} 
           setTriviaData={setTriviaData}
           />}
-      {errors.map( (error, idx) => {
-        return (
-          <div key={idx}>
-            {error}
-          </div>
-        )
-      })}
+      <Error errors={errors} />
     </div>
   );
 }
