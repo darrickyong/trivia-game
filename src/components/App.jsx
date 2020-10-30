@@ -23,20 +23,29 @@ function App() {
   }
 
   const welcome = (
-    <div>
+    <div className="welcome">
       <h1>Tandem Trivia Game!</h1>
-      
-      <label onClick={quickStart}>QuickStart</label>
 
-      <label htmlFor="file"> Use Your Own File 
-        <input 
-          id="file"
-          type="file" 
-          name="file"
-          style={{visibility: 'hidden'}}
-          onChange={handleUpload}
-        />
-      </label>
+      <div className="welcome-buttons">
+        <div
+          className="welcome-button" 
+          onClick={quickStart}
+        ><p>Quickstart</p></div>
+
+        <label 
+          className="welcome-button"
+          htmlFor="file"
+        > Use Your Own File 
+          <input 
+            className="upload"
+            id="file"
+            type="file" 
+            name="file"
+            onChange={handleUpload}
+          />
+        </label>
+
+      </div>
 
     </div>
   )

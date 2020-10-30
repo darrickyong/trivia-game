@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Apercu"; 
+  src: url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.eot"); src: 
+  url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.eot?#iefix") format("embedded-opentype"), 
+  url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.woff2") format("woff2"), 
+  url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.woff") format("woff"), 
+  url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.ttf") format("truetype"), 
+  url("//db.onlinewebfonts.com/t/b7a6aa84ad371cd47f36d433b5aa7e61.svg#Apercu") format("svg"); }
+
+body {
+  background: #FFF4E6;
+}
+
+#root {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100vh;
+  font-family: "Apercu";
+}
+
+.app {
+
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+}
+
+.welcome-button {
+  min-width: 200px;
+  min-height: 50px;
+  background: #001229;
+  color: #FFF;
+  text-align: center;
+  margin: auto;
+  border-radius: 1em;
+}
+
+.upload {
+  display: none;
+}
+
+h1 {
+  color: #717244;
+  font-size: 3em;
+}
