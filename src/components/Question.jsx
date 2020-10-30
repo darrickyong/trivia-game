@@ -2,12 +2,14 @@ import React, { useState } from "react";
 
 function Question({currentQuestion, choices, increment}) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [errors, setErrors] = useState([]);
   // console.log(selectedAnswer);
 
   const handleSubmit = e => {
     e.preventDefault();
+    setErrors([]);
     if (selectedAnswer === "") {
-      // error if submit nothing
+      setErrors(["Please select an answer."])
     } else {
       if (selectedAnswer === currentQuestion.correct) {
         increment("score")
@@ -18,26 +20,36 @@ function Question({currentQuestion, choices, increment}) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {currentQuestion.question}
-      {currentQuestion.correct}
-      {choices.map( (choice, idx) => {
+    <div>
+      <form onSubmit={handleSubmit}>
+        {currentQuestion.question}
+        {currentQuestion.correct}
+        {choices.map( (choice, idx) => {
+          return (
+            <div key={idx}>
+              <label> {choice} 
+                <input 
+                  type="radio" 
+                  name="select" 
+                  value={choice}
+                  checked={selectedAnswer === choice}
+                  onChange={e => {setSelectedAnswer(e.target.value)}}
+                />
+              </label>
+            </div>
+          )
+        })}
+        <button>Submit Answer</button>
+      </form>
+      {errors.map( error => {
         return (
-          <div key={idx}>
-            <label> {choice} 
-              <input 
-                type="radio" 
-                name="select" 
-                value={choice}
-                checked={selectedAnswer == choice}
-                onChange={e => {setSelectedAnswer(e.target.value)}}
-              />
-            </label>
+          <div>
+            {error}
           </div>
         )
       })}
-      <button>Submit Answer</button>
-    </form>
+    </div>
+    
   )
 }
 

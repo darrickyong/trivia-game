@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Game from "./Game";
+import data from "../Apprentice_TandemFor400_Data.json";
 
 function App() {
   const [triviaData, setTriviaData] = useState([]);
+  const [errors, setErrors] = useState([]);
 
   const handleUpload = e => {
     let reader = new FileReader();
@@ -15,15 +17,23 @@ function App() {
     setTriviaData(triviaData);
   }
 
+  const quickStart = e => {
+    setTriviaData(data)
+  }
+
   const welcome = (
     <div>
       <h1>
         Tandem Trivia Game!
       </h1>
-      <label> Upload a JSON file with trivia data :)
+      <label onClick={quickStart}>QuickStart</label>
+
+      <label htmlFor="file"> Use Your Own File 
         <input 
+          id="file"
           type="file" 
           name="file"
+          style={{visibility: 'hidden'}}
           onChange={handleUpload}
         />
       </label>
@@ -33,7 +43,18 @@ function App() {
 
   return (
     <div className="app">
-      {!triviaData.length ? welcome : <Game triviaData={triviaData} setTriviaData={setTriviaData}/>}
+      {!triviaData.length ? welcome : 
+        <Game 
+          triviaData={triviaData} 
+          setTriviaData={setTriviaData}
+          />}
+      {errors.map( (error, idx) => {
+        return (
+          <div key={idx}>
+            {error}
+          </div>
+        )
+      })}
     </div>
   );
 }
