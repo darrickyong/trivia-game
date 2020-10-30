@@ -49,7 +49,7 @@ function App() {
           triviaData={triviaData} 
           setTriviaData={setTriviaData}
           />}
-      <Error errors={errors} />
+      {errors.length ? <Error errors={errors} /> : null}
     </div>
   );
 }

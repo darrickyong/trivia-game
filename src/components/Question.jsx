@@ -41,7 +41,7 @@ function Question({currentQuestion, choices, increment}) {
         })}
         <button>Submit Answer</button>
       </form>
-      <Error errors={errors}/>
+      {errors.length ? <Error errors={errors} /> : null}
     </div>
     
   )
