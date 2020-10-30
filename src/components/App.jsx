@@ -24,9 +24,8 @@ function App() {
 
   const welcome = (
     <div>
-      <h1>
-        Tandem Trivia Game!
-      </h1>
+      <h1>Tandem Trivia Game!</h1>
+      
       <label onClick={quickStart}>QuickStart</label>
 
       <label htmlFor="file"> Use Your Own File 
@@ -44,11 +43,12 @@ function App() {
 
   return (
     <div className="app">
-      {!triviaData.length ? welcome : 
+      {triviaData.length ?  
         <Game 
           triviaData={triviaData} 
           setTriviaData={setTriviaData}
-          />}
+        /> :
+        welcome}
       {errors.length ? <Error errors={errors} /> : null}
     </div>
   );

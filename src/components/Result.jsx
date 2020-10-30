@@ -7,7 +7,7 @@ function Result({score, resetGame, setTriviaData}) {
       message = "Yikes..."
       break;
     case (score < 10):
-      message = "Almost there."
+      message = "Almost there..."
       break;
     default:
       message = "Perfect score!"
