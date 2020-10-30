@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Game from "./Game";
 
 function App() {
   const [triviaData, setTriviaData] = useState([]);
@@ -10,14 +11,15 @@ function App() {
   }
 
   const onReaderLoad = e => {
-    console.log(e.target.result);
     const triviaData = JSON.parse(e.target.result);
     setTriviaData(triviaData);
   }
 
-  return (
-    <div className="app">
-      Tandem Trivia Game!
+  const welcome = (
+    <div>
+      <h1>
+        Tandem Trivia Game!
+      </h1>
       <label> Upload a JSON file with trivia data :)
         <input 
           type="file" 
@@ -25,14 +27,15 @@ function App() {
           onChange={handleUpload}
         />
       </label>
+
+    </div>
+  )
+
+  return (
+    <div className="app">
+      {!triviaData.length ? welcome : <Game triviaData={triviaData} setTriviaData={setTriviaData}/>}
     </div>
   );
 }
 
 export default App;
-
-// {triviaData.map( questionData => {
-//   return (
-//     <div>{questionData.question}</div>
-//   )
-// })}
