@@ -54,7 +54,6 @@ function App() {
   }
 
   const quickStart = e => {
-    console.log(defaultData);
     setTriviaData(defaultData);
   }
 
@@ -88,7 +87,7 @@ function App() {
           <input
             className="api" 
             type="text"
-            placeholder="Paste API link here"
+            placeholder="Paste JSON API link here"
             value={apiLink}
             onChange={e => setApiLink(e.target.value)}/>
           Fetch from API
