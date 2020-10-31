@@ -66,7 +66,9 @@ function App() {
     <div className="welcome">
       <div className="welcome-high">
         {`High Score: ${highScore}`}
-        <div onClick={clearHighScore}>Clear High Score</div>
+        <div
+          className="welcome-high-button"
+          onClick={clearHighScore}>Clear High Score</div>
       </div>
       <h1>Tandem Trivia Game!</h1>
       <div className="welcome-buttons">
