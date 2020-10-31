@@ -27,11 +27,13 @@ body {
   display: flex;
   justify-content: space-between;
   width: 60vw;
+  font-size: 1.25em;
 }
 
 .welcome-button {
   min-width: 200px;
   min-height: 50px;
+  padding: 0px 20px;
   background: #001229;
   display: flex;
   justify-content: center;
@@ -56,4 +58,10 @@ body {
   color: #717244;
   font-size: 5em;
   text-align: center;
+}
+
+.errors {
+  height: 24px;
+  text-align: center;
+  color: red;
 }

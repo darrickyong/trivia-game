@@ -2,7 +2,9 @@ import React from "react";
 
 function Error({errors}) {
   return (
-    <div>
+    <div 
+      className="errors"
+      style={{visibility: errors.length ? "visible" : "hidden"}}>
       {errors.map((error, idx) => {
         return (
           <div key={idx}>
