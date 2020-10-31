@@ -1,0 +1,13 @@
+.game {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-counter {
+  font-family: 'Karla';
+  color: #717244;
+  font-size: 2em;
+}

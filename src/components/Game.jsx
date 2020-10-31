@@ -38,26 +38,26 @@ function Game({triviaData, setTriviaData}) {
   }
 
   return (
-    <div>
-      {currentQuestion ? (
-        <div className="game">        
-          <div>
-            {`Question ${counter + 1} of 10`}
-            <button onClick={() => setTriviaData([])}>Start Over</button>
-          </div>
-          <Question 
-            currentQuestion={currentQuestion}
-            choices={randomChoices}
-            increment={increment}
-          /> 
-        </div>
-      )
-      : <Result 
-          score={score}
-          resetGame={resetGame}
-          setTriviaData={setTriviaData}
-        />}
-    </div>
+    currentQuestion ? (
+      <div className="game">        
+        <button onClick={() => setTriviaData([])}>Start Over</button>
+        
+        <div
+          className="game-counter"
+        >{`Question ${counter + 1} of 10`}</div>
+
+        <Question 
+          currentQuestion={currentQuestion}
+          choices={randomChoices}
+          increment={increment}
+        /> 
+      </div>
+    )
+    : <Result 
+        score={score}
+        resetGame={resetGame}
+        setTriviaData={setTriviaData}
+      />
   )
 }
 

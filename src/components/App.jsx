@@ -30,7 +30,7 @@ function App() {
         <div
           className="welcome-button" 
           onClick={quickStart}
-        ><p>Quickstart</p></div>
+        >Quickstart</div>
 
         <label 
           className="welcome-button"

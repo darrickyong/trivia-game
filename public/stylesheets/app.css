@@ -6,11 +6,10 @@ body {
   display: flex; 
   flex-direction: column;
   justify-content: space-between; 
-  height: 100vh;
 }
 
 .app {
-  font-family: 'Karla', sans-serif;
+  height: 100vh;
 }
 
 .welcome {
@@ -29,6 +28,7 @@ body {
   min-width: 200px;
   min-height: 50px;
   background: #001229;
+  font-family: 'Karla';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,8 +51,9 @@ body {
   display: none;
 }
 
-h1 {
+.welcome > h1 {
   color: #717244;
   font-size: 3em;
+  font-family: 'Karla';
   text-align: center;
 }
