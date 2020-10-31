@@ -5,6 +5,7 @@ import Error from "./Error";
 import defaultData from "../Apprentice_TandemFor400_Data.json";
 
 function App() {
+  const [apiLink, setApiLink] = useState("");
   const [triviaData, setTriviaData] = useState([]);
   const [errors, setErrors] = useState([]);
   const [highScore, setHighScore] = useState(0);
@@ -37,6 +38,21 @@ function App() {
     }
   }
 
+  const fetchData = link => {
+    if(link.length) {
+      fetch(link)
+        .then(res => res.json())
+        .then(data => {
+          if (checkJSON(data[0])) {
+            setErrors([]);
+            setTriviaData(data);
+          } else {
+            setErrors(["Please check that the JSON format is correct."])
+          }
+        })
+    }
+  }
+
   const quickStart = e => {
     console.log(defaultData);
     setTriviaData(defaultData);
@@ -64,6 +80,19 @@ function App() {
             onChange={handleUpload}
           />
         </label>
+
+        <div 
+          className="welcome-button"
+          onClick={() => fetchData(apiLink)}
+        >
+          <input
+            className="api" 
+            type="text"
+            placeholder="Paste API link here"
+            value={apiLink}
+            onChange={e => setApiLink(e.target.value)}/>
+          Fetch from API
+        </div>
       </div>
     </div>
   )
