@@ -1,20 +1,8 @@
 import React, { useState } from "react";
-import Error from "./Error";
 
 function Question({currentQuestion, choices, increment}) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState([]);
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    setErrors([]);
-    if (selectedAnswer === "") {
-      setErrors(["Please select an answer."])
-    } else {
-      setSubmitted(!submitted);
-    }
-  }
   
   const handleNext = e => {
     e.preventDefault();
@@ -25,14 +13,21 @@ function Question({currentQuestion, choices, increment}) {
     setSelectedAnswer("");
     setSubmitted(!submitted);
   }
-
-  const submitButton = (
-    <button onClick={handleSubmit}>Submit Answer</button>
-  );
+  
+  const handleClick = e => {
+    if (!submitted) {
+      setSubmitted(!submitted);
+      setSelectedAnswer(e.target.innerText)
+    };
+  }
 
   const nextButton = (
-    <button onClick={handleNext}>Next</button>
-  );
+    <button
+      className="question-next"
+      style={{visibility: submitted ? "visible" : "hidden"}} 
+      onClick={handleNext
+    }>Next</button>
+  )
 
   const markedCorrect = (
     <div>
@@ -47,34 +42,21 @@ function Question({currentQuestion, choices, increment}) {
   )
 
   return (
-    <div>
-      <form>
-        {currentQuestion.question}
-        {currentQuestion.correct}
-        {choices.map( (choice, idx) => {
-          return (
-            <div key={idx}>
-              <label>  
-                <input 
-                  type="radio" 
-                  name="select" 
-                  value={choice}
-                  checked={selectedAnswer === choice}
-                  disabled={submitted}
-                  onChange={e => {setSelectedAnswer(e.target.value)}}
-                />
-                {choice}
-              </label>
-              {submitted ? 
-                choice === currentQuestion.correct ? 
-                  markedCorrect : choice === selectedAnswer ? 
-                      markedIncorrect : null : null}
-            </div>
-          )
-        })}
-        {submitted ? nextButton : submitButton}
-      </form>
-      {errors.length ? <Error errors={errors} /> : null}
+    <div className="question">
+      {currentQuestion.question}
+      {choices.map( (choice, idx) => {
+        return (
+          <div 
+            key={idx}
+            className={
+              submitted && choice === currentQuestion.correct ? "question-choice correct" : 
+              submitted && choice === selectedAnswer ? "question-choice incorrect" : "question-choice"}
+            onClick={handleClick}
+          >
+          {choice}</div>
+        )
+      })}
+      {nextButton}
     </div>
     
   )

@@ -1,0 +1,31 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  height: 75%;
+}
+
+.question-choice {
+  width: 50%;
+  border: 2px solid;
+  text-align: center;
+  border-radius: .5em;
+  padding: 10px;
+  font-size: .75em;
+}
+
+.question-choice:hover {
+  cursor: pointer;
+}
+
+.correct {
+  background-color: #2C4023;
+  color: #FFF;
+}
+
+.incorrect {
+  background-color: #EDAE9F;
+  color: #FFF;
+}

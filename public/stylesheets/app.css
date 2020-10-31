@@ -9,13 +9,18 @@ body {
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
 }
 
 .welcome {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  height: 60%;
 }
 
 .welcome-buttons {
@@ -28,7 +33,6 @@ body {
   min-width: 200px;
   min-height: 50px;
   background: #001229;
-  font-family: 'Karla';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,7 +57,6 @@ body {
 
 .welcome > h1 {
   color: #717244;
-  font-size: 3em;
-  font-family: 'Karla';
+  font-size: 5em;
   text-align: center;
 }

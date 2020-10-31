@@ -35,7 +35,7 @@ function App() {
         <label 
           className="welcome-button"
           htmlFor="file"
-        > Use Your Own File 
+        > Use Your Own JSON File 
           <input 
             className="upload"
             id="file"
