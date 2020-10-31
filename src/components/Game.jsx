@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Question from "./Question";
 import Result from "./Result";
 
-function Game({triviaData, setTriviaData}) {
+function Game({triviaData, setTriviaData, highScore, setHighScore}) {
   
   const randomizeArray = (questionArray, n) => {
     let questions = new Array(n),
@@ -27,6 +27,7 @@ function Game({triviaData, setTriviaData}) {
   const increment = item => {
     if (item === "score") {
       setScore(score + 1)
+      if (score > highScore) setHighScore(score);
     } else if (item === "counter") {
       setCounter(counter + 1)
     }
@@ -53,6 +54,7 @@ function Game({triviaData, setTriviaData}) {
     )
     : <Result 
         score={score}
+        highScore={highScore}
         resetGame={resetGame}
         setTriviaData={setTriviaData}
       />

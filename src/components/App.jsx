@@ -6,6 +6,7 @@ import data from "../Apprentice_TandemFor400_Data.json";
 function App() {
   const [triviaData, setTriviaData] = useState([]);
   const [errors, setErrors] = useState([]);
+  const [highScore, setHighScore] = useState(0);
 
   const checkJSON = sampleQuestion => {
     let question = typeof sampleQuestion.question == "string";
@@ -71,6 +72,8 @@ function App() {
         <Game 
           triviaData={triviaData} 
           setTriviaData={setTriviaData}
+          highScore={highScore}
+          setHighScore={setHighScore}
         /> :
         welcome}
       <Error errors={errors} />

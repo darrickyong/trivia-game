@@ -1,6 +1,13 @@
 import React from "react";
 
-function Result({score, resetGame, setTriviaData}) {
+function Result({score, resetGame, setTriviaData, highScore}) {
+  debugger;
+  if (!localStorage.highScore || score > localStorage.highScore) {
+    localStorage.highScore = score;
+  }
+
+  const allTimeHigh = Math.max(highScore, localStorage.highScore)
+
   let message;
   switch(true) {
     case (score < 3):
@@ -19,6 +26,9 @@ function Result({score, resetGame, setTriviaData}) {
 
   return (
     <div className="result">
+      <div>
+        {`High Score: ${allTimeHigh}`}
+      </div>
       {`You scored ${score} out of 10. ${message}`}
 
       <div className="result-buttons">
