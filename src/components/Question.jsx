@@ -22,11 +22,11 @@ function Question({currentQuestion, choices, increment}) {
   }
 
   const nextButton = (
-    <button
+    <div
       className="question-next"
       style={{visibility: submitted ? "visible" : "hidden"}} 
       onClick={handleNext}
-    >Next</button>
+    >Next</div>
   )
 
   return (

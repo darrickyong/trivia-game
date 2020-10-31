@@ -3,8 +3,11 @@ import React, { useState } from "react";
 function Result({score, resetGame, setTriviaData}) {
   let message;
   switch(true) {
-    case (score < 5):
+    case (score < 3):
       message = "Yikes..."
+      break;
+    case (score < 7):
+      message = "You can do better..."
       break;
     case (score < 10):
       message = "Almost there..."
@@ -15,10 +18,13 @@ function Result({score, resetGame, setTriviaData}) {
   }
 
   return (
-    <div>
-      {`${message} You scored ${score} out of 10.`}
-      <button onClick={resetGame}>Retry with same questions</button>
-      <button onClick={() => setTriviaData([])}>Start Over</button>
+    <div className="result">
+      {`You scored ${score} out of 10. ${message}`}
+
+      <div className="result-buttons">
+        <div className="result-button" onClick={resetGame}>Retry with same questions</div>
+        <div className="result-button" onClick={() => setTriviaData([])}>Start Over</div>
+      </div>
     </div>
   )
 }
