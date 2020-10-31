@@ -23,7 +23,7 @@ body {
 }
 
 .linkedin {
-  color: #fff;
+  color: #FFF4E6;
   background: #1177B5;
   font-size: 36px;
   border-radius: 3px;
@@ -32,12 +32,12 @@ body {
 
 .linkedin:hover {
   color: #1177B5;
-  background: #fff;
+  background: #FFF4E6;
 }
 
 .linkedin:active {
   color: #1177B5;
-  background: #fff;
+  background: #FFF4E6;
   box-shadow: none;
   top: 1px;
 }
@@ -87,6 +87,11 @@ body {
   height: 60%;
 }
 
+.welcome-high {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .welcome-buttons {
   display: flex;
   justify-content: space-between;
@@ -117,7 +122,10 @@ body {
 }
 
 .api {
-  margin-bottom: 10px;
+  width: 90%;
+  font-size: 0.5em;
+  padding: 3px;
+  margin-bottom: 5px;
   text-align: center;
 }
 

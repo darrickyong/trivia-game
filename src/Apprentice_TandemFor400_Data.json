@@ -272,7 +272,7 @@
     ]
   },
   {
-    "question": "What is the Italian word for '''tomato'?",
+    "question": "What is the Italian word for 'tomato'?",
     "correct": "Pomodoro",
     "incorrect": [
       "Aglio",

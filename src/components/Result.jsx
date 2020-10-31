@@ -1,11 +1,16 @@
 import React from "react";
 
-function Result({score, resetGame, setTriviaData, highScore}) {
+function Result({score, resetGame, setTriviaData, highScore, setHighScore}) {
   if (!localStorage.highScore || score > localStorage.highScore) {
     localStorage.highScore = score;
   }
 
-  const allTimeHigh = Math.max(highScore, localStorage.highScore)
+  const allTimeHigh = Math.max(highScore, localStorage.highScore);
+
+  const startOver = () => {
+    setHighScore(allTimeHigh);
+    setTriviaData([]);
+  }
 
   let message;
   switch(true) {
@@ -32,7 +37,7 @@ function Result({score, resetGame, setTriviaData, highScore}) {
 
       <div className="result-buttons">
         <div className="result-button" onClick={resetGame}>Retry with same questions</div>
-        <div className="result-button" onClick={() => setTriviaData([])}>Start Over</div>
+        <div className="result-button" onClick={startOver}>Start Over</div>
       </div>
     </div>
   )

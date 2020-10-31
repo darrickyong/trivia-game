@@ -8,7 +8,7 @@ function App() {
   const [apiLink, setApiLink] = useState("");
   const [triviaData, setTriviaData] = useState([]);
   const [errors, setErrors] = useState([]);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(localStorage.highScore || 0);
 
   const checkJSON = sampleQuestion => {
     let question = typeof sampleQuestion.question == "string";
@@ -57,10 +57,18 @@ function App() {
     setTriviaData(defaultData);
   }
 
+  const clearHighScore = () => {
+    setHighScore(0);
+    localStorage.highScore = 0;
+  }
+
   const welcome = (
     <div className="welcome">
+      <div className="welcome-high">
+        {`High Score: ${highScore}`}
+        <div onClick={clearHighScore}>Clear High Score</div>
+      </div>
       <h1>Tandem Trivia Game!</h1>
-
       <div className="welcome-buttons">
         <div
           className="welcome-button" 
@@ -70,7 +78,7 @@ function App() {
         <label 
           className="welcome-button"
           htmlFor="file"
-        > Use Your Own JSON File 
+        > Upload JSON File 
           <input 
             className="upload"
             id="file"
