@@ -19,7 +19,7 @@ function Game({triviaData, setTriviaData, highScore, setHighScore}) {
   const [counter, setCounter] = useState(0);
   const [score, setScore] = useState(0);
   const [actualQuestions, setActualQuestions] = useState(randomizeArray(triviaData, 10));
-  
+
   const currentQuestion = actualQuestions[counter];
   const choices = currentQuestion ? currentQuestion.incorrect.concat(currentQuestion.correct) : null;
   const randomChoices = currentQuestion ? randomizeArray(choices, 4): null;

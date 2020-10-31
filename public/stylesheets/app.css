@@ -12,7 +12,71 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+}
+
+.social {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.linkedin {
+  color: #fff;
+  background: #1177B5;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.linkedin:hover {
+  color: #1177B5;
+  background: #fff;
+}
+
+.linkedin:active {
+  color: #1177B5;
+  background: #fff;
+  box-shadow: none;
+  top: 1px;
+}
+
+.github {
+  color: #FFF4E6;
+  background: #434242;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.github:hover {
+  background: #FFF4E6;
+  color: #434242;
+}
+
+.github:active {
+  background: #434242;
+  color: #cccccc;
+  box-shadow: none;
+  top: 1px;
+}
+
+.angel {
+  color: #0e0e0e;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.angel:hover {
+  color: #434242;
+}
+
+.angel:active {
+  color: #434242;
+  box-shadow: none;
+  top: 1px;
 }
 
 .welcome {

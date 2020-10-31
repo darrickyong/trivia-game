@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { FaLinkedin, FaGithubAlt, FaAngellist } from "react-icons/fa";
 import Game from "./Game";
 import Error from "./Error";
-import data from "../Apprentice_TandemFor400_Data.json";
+import defaultData from "../Apprentice_TandemFor400_Data.json";
 
 function App() {
   const [triviaData, setTriviaData] = useState([]);
@@ -37,7 +38,8 @@ function App() {
   }
 
   const quickStart = e => {
-    setTriviaData(data)
+    console.log(defaultData);
+    setTriviaData(defaultData);
   }
 
   const welcome = (
@@ -66,8 +68,25 @@ function App() {
     </div>
   )
 
+  const socialMedia = (
+    <div className="social">
+      <a href="https://www.linkedin.com/in/darrick-yong/">
+        <FaLinkedin className="linkedin" />
+      </a>
+
+      <a href="https://github.com/darrickyong">
+        <FaGithubAlt className="github" />
+      </a>
+
+      <a href="https://angel.co/u/darrick-yong">
+        <FaAngellist className="angel" />
+      </a>
+    </div>
+  )
+
   return (
     <div className="app">
+      {socialMedia}
       {triviaData.length ?  
         <Game 
           triviaData={triviaData} 
