@@ -1,7 +1,6 @@
 import React from "react";
 
 function Result({score, resetGame, setTriviaData, highScore}) {
-  debugger;
   if (!localStorage.highScore || score > localStorage.highScore) {
     localStorage.highScore = score;
   }
