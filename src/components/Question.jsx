@@ -25,20 +25,8 @@ function Question({currentQuestion, choices, increment}) {
     <button
       className="question-next"
       style={{visibility: submitted ? "visible" : "hidden"}} 
-      onClick={handleNext
-    }>Next</button>
-  )
-
-  const markedCorrect = (
-    <div>
-      Correct
-    </div>
-  )
-  
-  const markedIncorrect = (
-    <div>
-      Incorrect
-    </div>
+      onClick={handleNext}
+    >Next</button>
   )
 
   return (
