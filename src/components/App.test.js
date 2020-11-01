@@ -13,8 +13,8 @@ describe('My App', () => {
   });
   
   it('renders correctly', () => {
-    const tree = renderer.create(<App />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const app = renderer.create(<App />).toJSON();
+    expect(app).toMatchSnapshot();
   });
 
   it('should render correctly with no props', () => {
