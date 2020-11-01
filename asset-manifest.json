@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/tandem-trivia/static/js/main.bf909455.chunk.js",
+    "main.js.map": "/tandem-trivia/static/js/main.bf909455.chunk.js.map",
+    "runtime-main.js": "/tandem-trivia/static/js/runtime-main.23a4de75.js",
+    "runtime-main.js.map": "/tandem-trivia/static/js/runtime-main.23a4de75.js.map",
+    "static/js/2.8c246718.chunk.js": "/tandem-trivia/static/js/2.8c246718.chunk.js",
+    "static/js/2.8c246718.chunk.js.map": "/tandem-trivia/static/js/2.8c246718.chunk.js.map",
+    "index.html": "/tandem-trivia/index.html",
+    "static/js/2.8c246718.chunk.js.LICENSE.txt": "/tandem-trivia/static/js/2.8c246718.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23a4de75.js",
+    "static/js/2.8c246718.chunk.js",
+    "static/js/main.bf909455.chunk.js"
+  ]
+}

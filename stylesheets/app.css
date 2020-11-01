@@ -1,0 +1,174 @@
+body {
+  background: #FFF4E6;
+}
+
+#root {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.social {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.linkedin {
+  color: #FFF4E6;
+  background: #1177B5;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.linkedin:hover {
+  color: #1177B5;
+  background: #FFF4E6;
+}
+
+.linkedin:active {
+  color: #1177B5;
+  background: #FFF4E6;
+  box-shadow: none;
+  top: 1px;
+}
+
+.github {
+  color: #FFF4E6;
+  background: #434242;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.github:hover {
+  background: #FFF4E6;
+  color: #434242;
+}
+
+.github:active {
+  background: #434242;
+  color: #cccccc;
+  box-shadow: none;
+  top: 1px;
+}
+
+.angel {
+  color: #0e0e0e;
+  font-size: 36px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.angel:hover {
+  color: #434242;
+}
+
+.angel:active {
+  color: #434242;
+  box-shadow: none;
+  top: 1px;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 60%;
+}
+
+.welcome-high {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5em;
+  margin-top: 20px;
+  color: #717244;
+}
+.welcome-high-button {
+  min-width: 100px;
+  min-height: 30px;
+  padding: 10px 20px;
+  background: #001229;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-size: .5em;
+  margin-top: 10px;
+  border-radius: .25em;  
+  position: relative;
+}
+
+.welcome-high-button:hover {
+  cursor: pointer;
+}
+
+.welcome-high-button:active {
+  top: 1px;
+}
+
+.welcome-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  font-size: 1.25em;
+}
+
+.welcome-button {
+  min-width: 200px;
+  min-height: 50px;
+  padding: 10px 20px;
+  background: #001229;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  margin: auto;
+  border-radius: .25em;  
+  position: relative;
+}
+
+.welcome-button:hover {
+  cursor: pointer;
+}
+.welcome-button:active {
+  top: 1px;
+}
+
+.api {
+  width: 90%;
+  font-size: 0.5em;
+  padding: 3px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.upload {
+  display: none;
+}
+
+.welcome > h1 {
+  color: #717244;
+  font-size: 5em;
+  text-align: center;
+}
+
+.errors {
+  height: 24px;
+  text-align: center;
+  color: red;
+}
