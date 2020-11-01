@@ -30,10 +30,12 @@ function Result({score, resetGame, setTriviaData, highScore, setHighScore}) {
 
   return (
     <div className="result">
-      <div>
+      <div className="score">
         {`High Score: ${allTimeHigh}`}
       </div>
-      {`You scored ${score} out of 10. ${message}`}
+      <div className="score">
+        {`You scored ${score} out of 10. ${message}`}
+      </div>
 
       <div className="result-buttons">
         <div className="result-button" onClick={resetGame}>Retry with same questions</div>
