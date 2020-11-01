@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My App should render correctly with no props 1`] = `
+<div
+  className="app"
+>
+  <div
+    className="social"
+  >
+    <a
+      href="https://www.linkedin.com/in/darrick-yong/"
+    >
+      <FaLinkedin
+        className="linkedin"
+      />
+    </a>
+    <a
+      href="https://github.com/darrickyong"
+    >
+      <FaGithubAlt
+        className="github"
+      />
+    </a>
+    <a
+      href="https://angel.co/u/darrick-yong"
+    >
+      <FaAngellist
+        className="angel"
+      />
+    </a>
+  </div>
+  <div
+    className="welcome"
+  >
+    <div
+      className="welcome-high"
+    >
+      High Score: 0
+      <div
+        className="welcome-high-button"
+        onClick={[Function]}
+      >
+        Clear High Score
+      </div>
+    </div>
+    <h1>
+      Tandem Trivia Game!
+    </h1>
+    <div
+      className="welcome-buttons"
+    >
+      <div
+        className="welcome-button"
+        onClick={[Function]}
+      >
+        Quickstart
+      </div>
+      <label
+        className="welcome-button"
+        htmlFor="file"
+      >
+         Upload JSON File
+        <input
+          className="upload"
+          id="file"
+          name="file"
+          onChange={[Function]}
+          type="file"
+        />
+      </label>
+      <div
+        className="welcome-button"
+        onClick={[Function]}
+      >
+        <input
+          className="api"
+          onChange={[Function]}
+          placeholder="Paste JSON API link here"
+          type="text"
+          value=""
+        />
+        Fetch from API
+      </div>
+    </div>
+  </div>
+  <Error
+    errors={Array []}
+  />
+</div>
+`;
