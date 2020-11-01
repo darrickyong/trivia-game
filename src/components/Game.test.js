@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Game from "./Game";
 import Question from "./Question";
-import defaultData from "../Apprentice_TandemFor400_Data.json";
+import defaultData from "../db.json";
 
 
 describe('The game', () => {

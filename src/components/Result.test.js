@@ -12,7 +12,7 @@ describe('The results', () => {
     expect(result.is('.result')).toBe(true);
   })
 
-  it('shows 2 scores ', () => {
+  it('shows 2 scores', () => {
     expect(result.find('.score')).toHaveLength(2);
   })
 })

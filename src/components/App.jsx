@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaLinkedin, FaGithubAlt, FaAngellist } from "react-icons/fa";
 import Game from "./Game";
 import Error from "./Error";
-import defaultData from "../Apprentice_TandemFor400_Data.json";
+import defaultData from "../db.json";
 
 function App() {
   const [apiLink, setApiLink] = useState("");
@@ -11,6 +11,7 @@ function App() {
   const [highScore, setHighScore] = useState(localStorage.highScore || 0);
 
   const checkJSON = sampleQuestion => {
+    if (!(sampleQuestion instanceof Array)) return false;
     let question = typeof sampleQuestion.question == "string";
     let correct = typeof sampleQuestion.correct == "string";
     let incorrect = sampleQuestion.incorrect.every( choice => typeof choice == "string") && sampleQuestion.incorrect.length === 3;
