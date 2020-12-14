@@ -1,4 +1,6 @@
-# Tandem Trivia Game
+# Darrick's Trivia Game
+
+[Live Site](https://darrickyong.github.io/tandem-trivia/)
 
 ## Installation
 1. Navigate to directory where you want the project installed.
