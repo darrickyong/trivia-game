@@ -1,72 +1,50 @@
-import React, { useState } from 'react';
-import Upload from './Upload';
+import React, { useContext, useState } from "react";
+import CustomQuestions from "./CustomQuestions";
+import { MobileContext } from "./App";
 
-export default function Welcome({ 
-  highScore, 
-  clearHighScore, 
-  quickStart, 
-  handleUpload, 
-  fetchData, 
-  setModal,
+export default function Welcome({
+  highScore,
+  clearHighScore,
+  setTriviaData,
+  quickStart,
 }) {
-  const [showUpload, setShowUpload] = useState(false);
+  const [isCustom, setIsCustom] = useState(false);
+  const isMobile = useContext(MobileContext);
 
   const buttons = (
     <div className="welcome-buttons">
-      <div
-        className="welcome-button"
-        onClick={quickStart}
-      >Quickstart</div>
+      <div className="welcome-button" onClick={quickStart}>
+        Quickstart
+      </div>
 
-      <div
-        className="welcome-button"
-        onClick={() => setShowUpload(true)}
-      >Use my own file</div>
-
-      {/* <label
-          className="welcome-button"
-          htmlFor="file"
-        > Upload JSON File
-          <input
-            className="upload"
-            id="file"
-            type="file"
-            name="file"
-            onChange={handleUpload}
-          />
-        </label>
-
-        <div
-          className="welcome-button"
-          onClick={() => fetchData(apiLink)}
-        >
-          <input
-            className="api"
-            type="text"
-            placeholder="Paste JSON API link here"
-            value={apiLink}
-            onChange={e => setApiLink(e.target.value)} />
-          Fetch from API
-        </div> */}
+      <div className="welcome-button" onClick={() => setIsCustom(true)}>
+        Select Settings
+      </div>
     </div>
-  )
+  );
 
-  return (
+  const welcome = (
     <div className="welcome">
       <div className="welcome-high">
         {`High Score: ${highScore}`}
-        <div
-          className="welcome-high-button"
-          onClick={clearHighScore}>Clear High Score</div>
+        <div className="welcome-high-button" onClick={clearHighScore}>
+          Clear High Score
+        </div>
       </div>
-      <h1>Darrick's Trivia Game!</h1>
-      {showUpload ? 
-        <Upload 
-          handleUpload={handleUpload} 
-          fetchData={fetchData}
-          setModal={setModal}
-        /> : 
-        buttons}
+      <h1>Another Trivia Game!</h1>
+      {buttons}
     </div>
-  )
+  );
+
+  const custom = (
+    <div className="welcome">
+      <h1>Select Your Settings</h1>
+      <CustomQuestions
+        goBack={() => setIsCustom(false)}
+        setTriviaData={setTriviaData}
+      />
+    </div>
+  );
+
+  return isCustom ? custom : welcome;
 }

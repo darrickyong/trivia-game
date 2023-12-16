@@ -6,7 +6,7 @@ function Question({currentQuestion, choices, increment}) {
   
   const handleNext = e => {
     e.preventDefault();
-    if (selectedAnswer === currentQuestion.correct) {
+    if (selectedAnswer === currentQuestion.correctAnswer) {
       increment("score")
     }
     increment("counter");
@@ -31,13 +31,13 @@ function Question({currentQuestion, choices, increment}) {
 
   return (
     <div className="question">
-      {currentQuestion.question}
+      {currentQuestion.question.text}
       {choices.map( (choice, idx) => {
         return (
           <div 
             key={idx}
             className={
-              submitted && choice === currentQuestion.correct ? "question-choice correct" : 
+              submitted && choice === currentQuestion.correctAnswer ? "question-choice correct" : 
               submitted && choice === selectedAnswer ? "question-choice incorrect" : "question-choice"}
             onClick={handleClick}
           >
