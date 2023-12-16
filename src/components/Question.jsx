@@ -3,6 +3,8 @@ import React, { useState } from "react";
 function Question({currentQuestion, choices, increment}) {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  console.log(currentQuestion.correctAnswer);
   
   const handleNext = e => {
     e.preventDefault();
